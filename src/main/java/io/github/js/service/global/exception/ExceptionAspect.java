@@ -26,7 +26,7 @@ public class ExceptionAspect {
             return proceedingJoinPoint.proceed();
         } catch (Throwable e) {
             SlackErrorAlarmParam param = getSlackErrorAlarmParam(proceedingJoinPoint, e);
-            slackService.sendErrorAlarmBySlackApi(param);
+            slackService.sendErrorAlarmBySlackWebhook(param);
             return null;
         }
     }

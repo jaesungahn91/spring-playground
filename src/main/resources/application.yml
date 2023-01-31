@@ -15,8 +15,21 @@ spring:
   datasource:
     url: jdbc:h2:mem:test;DB_CLOSE_DELAY=-1;MODE=PostgreSQL;DATABASE_TO_LOWER=TRUE
 
+jasypt:
+  encryptor:
+    bean: encryptorBean
+
+config:
+  encrypt:
+    password: BXJ/cJf5+rDGW8RdaaiZjspaZUi+vbFr
+    algorithm: PBEWithMD5AndDES
+    provider-name: SunJCE
+    pool-size: 1
+    key-obtention-iterations: 1000
+    string-output-type: base64
+
 logging:
   module-name: TEST
   slack:
-    webhook-uri: https://hooks.slack.com/services/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
+    webhook-uri: ENC(nDV7EM1elUtQeFhXZn5aIqQ2T3MFOreZsKISOx/61ro+lvKUJKBKQmrsS4no3lSVgfkgmxsE15ax5LiNGoM2VBPoGhmAHzZWm8zQearpqzHRNoMn+NyYqBLGTX/V0kvZ)
   config: classpath:logback-spring.xml
