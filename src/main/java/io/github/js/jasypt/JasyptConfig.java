@@ -20,7 +20,7 @@ public class JasyptConfig {
     }
 
     @Bean
-    @ConfigurationProperties("config.encrypt")
+    @ConfigurationProperties("jasypt.config.encrypt")
     public SimpleStringPBEConfig simpleStringPBEConfig() {
         return new SimpleStringPBEConfig();
     }

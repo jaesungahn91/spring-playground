@@ -18,15 +18,14 @@ spring:
 jasypt:
   encryptor:
     bean: encryptorBean
-
-config:
-  encrypt:
-    password: BXJ/cJf5+rDGW8RdaaiZjspaZUi+vbFr
-    algorithm: PBEWithMD5AndDES
-    provider-name: SunJCE
-    pool-size: 1
-    key-obtention-iterations: 1000
-    string-output-type: base64
+  config:
+    encrypt:
+      password: BXJ/cJf5+rDGW8RdaaiZjspaZUi+vbFr
+      algorithm: PBEWithMD5AndDES
+      provider-name: SunJCE
+      pool-size: 1
+      key-obtention-iterations: 1000
+      string-output-type: base64
 
 logging:
   module-name: TEST
