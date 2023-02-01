@@ -6,3 +6,6 @@
 
 ### self-invocation test
 - self.invocation
+
+### request logging with filter
+- logging.filter

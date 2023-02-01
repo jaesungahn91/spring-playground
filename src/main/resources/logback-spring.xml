@@ -16,7 +16,8 @@
     <!--     Consol appender 설정 -->
     <appender name="Console" class="ch.qos.logback.core.ConsoleAppender">
         <encoder>
-            <pattern>%d{"yyyy-MM-dd HH:mm:ss,SSSZ"} %highlight(%-5p) [%thread] %X{userId} %c - %m%n</pattern>
+<!--            <pattern>%d{"yyyy-MM-dd HH:mm:ss,SSSZ"} %highlight(%-5p) [%thread] %X{userId} %c - %m%n</pattern>-->
+            <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] [traceId=%X{traceId}] %highlight(%-5p) %logger{36}.%M - %msg%n</pattern>
         </encoder>
     </appender>
 
