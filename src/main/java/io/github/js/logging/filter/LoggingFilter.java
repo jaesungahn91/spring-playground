@@ -28,25 +28,25 @@ public class LoggingFilter extends OncePerRequestFilter {
     @Override
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) throws ServletException, IOException {
         MDC.put("traceId", UUID.randomUUID().toString());
+        StopWatch stopWatch = new StopWatch();
+        stopWatch.start();
         if (isAsyncDispatch(request)) {
             filterChain.doFilter(request, response);
         } else {
             doFilterWrapped(new RequestWrapper(request), new ResponseWrapper(response), filterChain);
         }
+        stopWatch.stop();
+        log.info("requestTime : {}(ms)", stopWatch.getTotalTimeMillis());
         MDC.clear();
     }
 
     protected void doFilterWrapped(RequestWrapper request, ContentCachingResponseWrapper response, FilterChain filterChain) throws ServletException, IOException {
-        StopWatch stopWatch = new StopWatch();
         try {
-            stopWatch.start();
             logRequest(request);
             filterChain.doFilter(request, response);
         } finally {
             logResponse(response);
             response.copyBodyToResponse();
-            stopWatch.stop();
-            log.info("requestTime : {}(ms)", stopWatch.getTotalTimeMillis());
         }
     }
 
