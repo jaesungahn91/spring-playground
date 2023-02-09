@@ -36,7 +36,7 @@ public class LoggingFilter extends OncePerRequestFilter {
             doFilterWrapped(new RequestWrapper(request), new ResponseWrapper(response), filterChain);
         }
         stopWatch.stop();
-        log.info("requestTime : {}(ms)", stopWatch.getTotalTimeMillis());
+        log.info("Response Time : {}(ms)", stopWatch.getTotalTimeMillis());
         MDC.clear();
     }
 
