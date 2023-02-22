@@ -9,3 +9,6 @@
 
 ### request logging with filter
 - logging.filter
+
+### enum to bean
+- enums.bean
