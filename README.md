@@ -1,3 +1,8 @@
+![spring](https://img.shields.io/badge/Spring%20boot-3.0.1-green)
+![java](https://img.shields.io/badge/Java-17-red)
+
+# Spring Playground
+
 ### service exception handling & slack push
 - service.global.exception
 
