@@ -6,7 +6,7 @@
 ### service exception handling & slack push
 - service.global.exception
 
-### private setting file encryption with jasypt
+### encrypting private configuration files with jasypt
 - jasypt
 
 ### self-invocation test
